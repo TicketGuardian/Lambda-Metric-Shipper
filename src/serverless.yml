@@ -8,7 +8,7 @@ frameworkVersion: ">=1.40.0 <2.0.0"
 provider:
   name: aws
   runtime: python2.7
-  stage: 'sandbox'
+  stage: ${opt:stage}
   region: us-west-2
   iamRoleStatements:
     - Effect: 'Allow'
@@ -22,9 +22,9 @@ provider:
   timeout: 180
   environment:
     TOKEN: 'qFWKtOrYiJusRWRAqJtUOTnoQQTBYlud'
-    FILEPATH: 'configure.sandbox.json'
+    FILEPATH: 'configure.${opt:stage}.json'
     URL: 'https://listener.logz.io:8071/'
-    ENV: 'sandbox'
+    ENV: ${opt:stage}
 
 functions:
   metricShipper:
