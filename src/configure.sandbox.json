@@ -176,15 +176,15 @@
 		},
 		{
 			"Namespace": "AWS/ApplicationELB",
-			"MetricName": "RequestCountPerTarget",
+			"MetricName": "RequestCount",
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/core/5b80c8b8237f34be"
+					"Value": "targetgroup/core/08e4d7c5e75b24fb"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
@@ -194,11 +194,11 @@
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/core/5b80c8b8237f34be"
+					"Value": "targetgroup/core/08e4d7c5e75b24fb"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
@@ -208,25 +208,25 @@
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/core/5b80c8b8237f34be"
+					"Value": "targetgroup/core/08e4d7c5e75b24fb"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
 		{
 			"Namespace": "AWS/ApplicationELB",
-			"MetricName": "RequestCountPerTarget",
+			"MetricName": "RequestCount",
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/nota/7c57584f0f3a8c35"
+					"Value": "targetgroup/claims/b0b63557a805a263"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
@@ -236,11 +236,11 @@
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/nota/7c57584f0f3a8c35"
+					"Value": "targetgroup/claims/b0b63557a805a263"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
@@ -250,25 +250,25 @@
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/nota/7c57584f0f3a8c35"
+					"Value": "targetgroup/claims/b0b63557a805a263"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
 		{
 			"Namespace": "AWS/ApplicationELB",
-			"MetricName": "RequestCountPerTarget",
+			"MetricName": "RequestCount",
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/claims/c3b2829aacd116d3"
+					"Value": "targetgroup/nota/d0db749263997d6f"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
@@ -278,11 +278,11 @@
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/claims/c3b2829aacd116d3"
+					"Value": "targetgroup/nota/d0db749263997d6f"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		},
@@ -292,11 +292,11 @@
 			"Dimensions": [
 				{
 					"Name": "TargetGroup",
-					"Value": "targetgroup/claims/c3b2829aacd116d3"
+					"Value": "targetgroup/nota/d0db749263997d6f"
 				},
 				{
 					"Name": "LoadBalancer",
-					"Value": "app/elastigroup/98e6f477efa23fee"
+					"Value": "app/elastigroup/219d61e25afbdcc9"
 				}
 			]
 		}
