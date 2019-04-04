@@ -1,0 +1,37 @@
+# serverless.yml
+
+service:
+  name: Logzio-Metric-Shipper
+
+frameworkVersion: ">=1.40.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python2.7
+  region: us-west-2
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'cloudwatch:GetMetricStatistics'
+        - 'cloudwatch:ListMetrics'
+        - 'cloudwatch:DescribeAlarms'
+      Resource:
+        - '*'
+  memorySize: 512
+  timeout: 180
+  environment:
+    TOKEN: 'qFWKtOrYiJusRWRAqJtUOTnoQQTBYlud'
+    FILEPATH: 'configure.${opt:stage}.json'
+    URL: 'https://listener.logz.io:8071/'
+    ENV: '${opt:stage}'
+
+functions:
+  metricShipper:
+    handler: lambda_function.lambda_handler
+    name: Logzio-Metric-Shipper
+    Descripition: 'Ships metrics to Logz.io'
+    package:
+      include:
+        - src/**
+    events:
+      - schedule: rate(1 minute)

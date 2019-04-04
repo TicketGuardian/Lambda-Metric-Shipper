@@ -10,6 +10,30 @@ from shipper import LogzioShipper
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+def json_load_byteified(file_handle):
+    return _byteify(
+        json.load(file_handle, object_hook=_byteify),
+        ignore_dicts=True
+    )
+
+
+def _byteify(data, ignore_dicts = False):
+    # if this is a unicode string, return its string representation
+    if isinstance(data, unicode):
+        return data.encode('utf-8')
+    # if this is a list of values, return list of byteified values
+    if isinstance(data, list):
+        return [ _byteify(item, ignore_dicts=True) for item in data ]
+    # if this is a dictionary, return dictionary of byteified keys and values
+    # but only if we haven't already byteified it
+    if isinstance(data, dict) and not ignore_dicts:
+        return {
+            _byteify(key, ignore_dicts=True): _byteify(value, ignore_dicts=True)
+            for key, value in data.iteritems()
+        }
+    # if it's anything else, return it in its original form
+    return data
+
 
 # Set statistics parameters
 def _set_metric_stats(metric, requests_meta_data):
@@ -38,7 +62,7 @@ def _enrich_data_point(data_point, metric):
     # type: (dict, dict) -> None
     timestamp = data_point.pop('Timestamp')
     ts = timestamp.isoformat()
-    data_point.update({"metric": metric['MetricName'], "@timestamp": ts, "Namespace": metric["Namespace"]})
+    data_point.update({"metric": metric['MetricName'], "@timestamp": ts, "Namespace": metric["Namespace"], "Environment": os.environ["ENV"]})
     for dim in metric['Dimensions']:
         key = dim['Name']
         value = dim['Value']
@@ -124,7 +148,7 @@ def validate_configurations():
     try:
         with open(configuration_fp, 'r') as f:
             try:
-                jfile = json.load(f)
+                jfile = json_load_byteified(f)
                 time_interval = jfile['TimeInterval']
                 period = jfile['Period']
                 configurations = jfile['Configurations']
@@ -166,7 +190,7 @@ def validate_configurations():
                     try:
                         metric_name = conf["MetricName"]
                         if not isinstance(metric_name, str):
-                            logger.error("Error in your configuration file: Period should be int(sec)")
+                            logger.error("Error in your configuration file: MetricName must be str")
                             raise RuntimeError
                     except KeyError:
                         # no MetricName is fine

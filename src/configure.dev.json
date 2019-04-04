@@ -1,0 +1,238 @@
+{
+	"TimeInterval": 1,
+	"Period": 60,
+	"Statistics": ["Average", "SampleCount"],
+	"Configurations": [
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "CPUUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "core"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "MemoryUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "core"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "CPUUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "core-celery"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "MemoryUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "core-celery"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "CPUUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "claims"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "MemoryUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "claims"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "CPUUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "claims-celery"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "MemoryUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "claims-celery"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "CPUUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "nota"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "MemoryUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "nota"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "CPUUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "nota-celery"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+	  },
+	  {
+	  	"Namespace": "AWS/ECS",
+	  	"MetricName": "MemoryUtilization",
+	  	"Dimensions": [{
+	  		"Name": "ServiceName",
+	  		"Value": "nota-celery"
+	  	}, {
+	  		"Name": "ClusterName",
+	  		"Value": "elastigroup"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "RequestCountPerTarget",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/core/5b80c8b8237f34be"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "HTTPCode_Target_4XX_Count",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/core/5b80c8b8237f34be"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "HTTPCode_Target_5XX_Count",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/core/5b80c8b8237f34be"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "RequestCountPerTarget",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/nota/7c57584f0f3a8c35"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "HTTPCode_Target_4XX_Count",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/nota/7c57584f0f3a8c35"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "HTTPCode_Target_5XX_Count",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/nota/7c57584f0f3a8c35"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "RequestCountPerTarget",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/claims/c3b2829aacd116d3"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "HTTPCode_Target_4XX_Count",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/claims/c3b2829aacd116d3"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		},
+		{
+	  	"Namespace": "AWS/ApplicationELB",
+	  	"MetricName": "HTTPCode_Target_5XX_Count",
+	  	"Dimensions": [{
+	  		"Name": "TargetGroup",
+	  		"Value": "targetgroup/claims/c3b2829aacd116d3"
+	  	}, {
+	  		"Name": "LoadBalancer",
+	  		"Value": "app/elastigroup/98e6f477efa23fee"
+	  	}]
+		}
+	]
+}
